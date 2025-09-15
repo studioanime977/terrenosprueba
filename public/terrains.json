@@ -25,7 +25,8 @@
       "../img/terreno1-3.jpg"
     ],
     "coordinates": "19.4326, -99.1332",
-    "detailPage": "terreno1.html"
+    "detailPage": "terreno1.html",
+    "enabled": true
   },
   {
     "id": 2,
@@ -53,7 +54,8 @@
       "../img/terreno2-3.jpg"
     ],
     "coordinates": "19.4285, -99.1277",
-    "detailPage": "terreno2.html"
+    "detailPage": "terreno2.html",
+    "enabled": true
   },
   {
     "id": 3,
@@ -81,7 +83,8 @@
       "../img/terreno3-3.jpg"
     ],
     "coordinates": "19.3910, -99.2837",
-    "detailPage": "terreno3.html"
+    "detailPage": "terreno3.html",
+    "enabled": true
   },
   {
     "id": 4,
@@ -109,6 +112,7 @@
       "../img/terreno4-3.jpg"
     ],
     "coordinates": "19.5126, -99.0532",
-    "detailPage": "terreno4.html"
+    "detailPage": "terreno4.html",
+    "enabled": true
   }
 ]

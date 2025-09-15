@@ -232,53 +232,183 @@ class TerrenosChatbot {
     // Get property information
     getPropertyInfo(message) {
         if (message.includes('residencial') || message.includes('casa')) {
-            return `Tenemos el **Terreno Residencial Las Flores** de 500 m² por $85,000 USD. Está ubicado en Zona Norte con todos los servicios disponibles. ¿Te gustaría más detalles sobre esta propiedad?`;
+            return `🏠 **TERRENO RESIDENCIAL LAS FLORES**
+            
+📍 **Ubicación:** Zona Norte, Ciudad
+📐 **Tamaño:** 500 m²
+💰 **Precio:** $1,700,000 MXN
+⭐ **Estado:** Destacado
+
+✅ **Características:**
+• Agua potable
+• Electricidad
+• Drenaje
+• Pavimentación
+• Seguridad 24/7
+
+También tenemos el **Terreno Residencial Premium** en Zona Exclusiva. ¿Te interesa conocer más detalles?`;
         }
         
         if (message.includes('comercial') || message.includes('negocio')) {
-            return `Nuestro **Terreno Comercial Centro** de 800 m² está disponible por $150,000 USD. Ubicación estratégica con alto tráfico peatonal. ¿Quieres saber más?`;
+            return `🏢 **TERRENO COMERCIAL CENTRO**
+            
+📍 **Ubicación:** Centro Comercial
+📐 **Tamaño:** 800 m²
+💰 **Precio:** $3,000,000 MXN
+⭐ **Estado:** Nuevo
+
+✅ **Características:**
+• Ubicación estratégica
+• Alto tráfico peatonal
+• Transporte público
+• Zonificación comercial
+• Servicios completos
+
+¿Te gustaría agendar una visita?`;
         }
         
         if (message.includes('industrial')) {
-            return `El **Terreno Industrial El Progreso** de 1,200 m² está en $120,000 USD. Perfecto para desarrollo industrial con acceso a carreteras principales.`;
+            return `🏭 **TERRENO INDUSTRIAL EL PROGRESO**
+            
+📍 **Ubicación:** Zona Industrial
+📐 **Tamaño:** 1,200 m²
+💰 **Precio:** $2,400,000 MXN
+
+✅ **Características:**
+• Acceso a carreteras principales
+• Servicios industriales
+• Zonificación industrial
+• Energía trifásica
+• Amplio espacio
+
+Perfecto para desarrollo industrial. ¿Necesitas más información?`;
         }
         
         if (message.includes('campestre') || message.includes('rural')) {
-            return `Tenemos el **Terreno Campestre Vista Hermosa** de 2,000 m² por $65,000 USD. Ideal para casa de campo con vista panorámica.`;
+            return `🌳 **TERRENO CAMPESTRE VISTA HERMOSA**
+            
+📍 **Ubicación:** Zona Rural
+📐 **Tamaño:** 2,000 m²
+💰 **Precio:** $1,300,000 MXN
+⭐ **Estado:** Oferta especial
+
+✅ **Características:**
+• Vista panorámica
+• Ambiente natural
+• Aire puro
+• Tranquilidad absoluta
+• Ideal para casa de campo
+
+¿Te interesa conocer las opciones de financiamiento?`;
         }
         
-        return `Tenemos 4 excelentes propiedades disponibles:
-        
-🏠 **Residencial Las Flores** - 500 m² - $85,000 USD
-🏢 **Comercial Centro** - 800 m² - $150,000 USD  
-🏭 **Industrial El Progreso** - 1,200 m² - $120,000 USD
-🌳 **Campestre Vista Hermosa** - 2,000 m² - $65,000 USD
+        if (message.includes('mixto') || message.includes('desarrollo')) {
+            return `🏗️ **TERRENO MIXTO DESARROLLO**
+            
+📍 **Ubicación:** Zona Mixta
+📐 **Tamaño:** 600 m²
+💰 **Precio:** $1,850,000 MXN
 
-¿Cuál te interesa más?`;
+✅ **Características:**
+• Uso mixto permitido
+• Excelente conectividad
+• Servicios completos
+• Potencial de crecimiento
+
+Perfecto para proyectos de desarrollo. ¿Quieres más detalles?`;
+        }
+        
+        if (message.includes('premium')) {
+            return `🏘️ **TERRENO RESIDENCIAL PREMIUM**
+            
+📍 **Ubicación:** Zona Exclusiva
+📐 **Tamaño:** 750 m²
+💰 **Precio:** $2,200,000 MXN
+⭐ **Estado:** Premium
+
+✅ **Características:**
+• Zona exclusiva
+• Servicios premium
+• Seguridad privada
+• Acabados de lujo
+• Plusvalía garantizada
+
+¿Te gustaría agendar una visita personalizada?`;
+        }
+        
+        return `Tenemos **6 propiedades disponibles**. Te puedo mostrar información detallada de cada una:
+
+🏠 **Residencial Las Flores** (Destacado)
+🏢 **Comercial Centro** (Nuevo)  
+🏭 **Industrial El Progreso**
+🌳 **Campestre Vista Hermosa** (Oferta)
+🏘️ **Residencial Premium**
+🏗️ **Mixto Desarrollo**
+
+¿Sobre cuál te gustaría conocer más detalles?`;
     }
 
     // Get price information
     getPriceInfo(message) {
-        return `Nuestros precios actuales son:
+        return `**LISTA DE PRECIOS - TERRENOS PREMIUM**
 
-💰 **Terreno Residencial Las Flores**: $85,000 USD (500 m²)
-💰 **Terreno Comercial Centro**: $150,000 USD (800 m²)
-💰 **Terreno Industrial El Progreso**: $120,000 USD (1,200 m²)
-💰 **Terreno Campestre Vista Hermosa**: $65,000 USD (2,000 m²)
+🏠 **RESIDENCIAL LAS FLORES**
+💰 $1,700,000 MXN | 📐 500 m² | ⭐ Destacado
 
-Todos los precios incluyen escrituración. ¿Te interesa alguna opción de financiamiento?`;
+🏢 **COMERCIAL CENTRO**  
+💰 $3,000,000 MXN | 📐 800 m² | ⭐ Nuevo
+
+🏭 **INDUSTRIAL EL PROGRESO**
+💰 $2,400,000 MXN | 📐 1,200 m²
+
+🌳 **CAMPESTRE VISTA HERMOSA**
+💰 $1,300,000 MXN | 📐 2,000 m² | ⭐ Oferta
+
+🏘️ **RESIDENCIAL PREMIUM**
+💰 $2,200,000 MXN | 📐 750 m² | ⭐ Premium
+
+🏗️ **MIXTO DESARROLLO**
+💰 $1,850,000 MXN | 📐 600 m²
+
+✅ Todos los precios incluyen escrituración
+💳 Opciones de financiamiento disponibles
+
+¿Te interesa información detallada de algún terreno específico?`;
     }
 
     // Get location information
     getLocationInfo(message) {
-        return `📍 **Ubicaciones de nuestras propiedades:**
+        return `📍 **UBICACIONES DE NUESTROS TERRENOS**
 
-🏠 **Residencial Las Flores**: Zona Norte, Ciudad
-🏢 **Comercial Centro**: Centro Comercial
-🏭 **Industrial El Progreso**: Zona Industrial
-🌳 **Campestre Vista Hermosa**: Zona Rural
+🏠 **RESIDENCIAL LAS FLORES**
+📍 Zona Norte, Ciudad
+🚗 Fácil acceso por Av. Principal
 
-Nuestra oficina está en Av. Principal 123, Centro. ¿Te gustaría agendar una visita a alguna propiedad?`;
+🏢 **COMERCIAL CENTRO**  
+📍 Centro Comercial
+🚇 Cerca de transporte público
+
+🏭 **INDUSTRIAL EL PROGRESO**
+📍 Zona Industrial
+🛣️ Acceso directo a carreteras
+
+🌳 **CAMPESTRE VISTA HERMOSA**
+📍 Zona Rural
+🌲 Entorno natural privilegiado
+
+🏘️ **RESIDENCIAL PREMIUM**
+📍 Zona Exclusiva
+🔒 Área privada y segura
+
+🏗️ **MIXTO DESARROLLO**
+📍 Zona Mixta
+🏙️ Área en crecimiento
+
+🏢 **NUESTRA OFICINA:**
+📍 Av. Principal 123, Centro
+📞 +1 234 567 8900
+
+¿Te gustaría agendar una visita a alguna propiedad?`;
     }
 
     // Get visit information
