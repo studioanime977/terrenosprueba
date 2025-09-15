@@ -328,21 +328,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load terrains from API
 async function loadTerrains() {
     try {
-        const response = await fetch('/api/terrains?enabled_only=true');
-        const result = await response.json();
-        
-        if (result.success) {
-            properties = result.terrains;
-            displayProperties();
-            console.log('Terrains loaded:', properties.length);
-        } else {
-            console.error('Error loading terrains:', result.message);
-            // Fallback to JSON file
-            loadTerrainsFromJSON();
-        }
+        // For Vercel deployment, use JSON file directly
+        loadTerrainsFromJSON();
     } catch (error) {
-        console.error('Error fetching terrains from API:', error);
-        // Fallback to JSON file
+        console.error('Error loading terrains:', error);
         loadTerrainsFromJSON();
     }
 }

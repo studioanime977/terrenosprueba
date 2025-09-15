@@ -75,59 +75,57 @@ function handleLogin(event) {
 }
 
 // Handle user registration
-function handleRegister(event) {
+async function handleUserRegistration(event) {
     event.preventDefault();
     
     const formData = new FormData(event.target);
-    const firstName = formData.get('first_name').trim();
-    const lastName = formData.get('last_name').trim();
-    const email = formData.get('email').trim().toLowerCase();
-    const phone = formData.get('phone').trim();
-    const password = formData.get('password');
-    const confirmPassword = formData.get('confirm_password');
-    const interest = formData.get('interest');
-    const newsletter = document.getElementById('newsletter').checked;
-
-    // Validation
-    if (password !== confirmPassword) {
-        showMessage('register-error', 'Las contraseñas no coinciden');
-        return;
-    }
-
-    if (password.length < 6) {
-        showMessage('register-error', 'La contraseña debe tener al menos 6 caracteres');
-        return;
-    }
-
-    // Check if user already exists
-    if (users.find(u => u.email === email)) {
-        showMessage('register-error', 'Ya existe un usuario con este email');
-        return;
-    }
-
-    // Create new user
-    const newUser = {
-        id: Date.now(),
-        firstName: firstName,
-        lastName: lastName,
-        fullName: `${firstName} ${lastName}`,
-        email: email,
-        phone: phone,
-        username: email,
-        password: password,
-        interest: interest,
-        newsletter: newsletter,
-        role: 'user',
-        createdAt: new Date().toISOString(),
-        lastLogin: null
+    const userData = {
+        username: formData.get('username'),
+        email: formData.get('email'),
+        password: formData.get('password'),
+        fullName: formData.get('fullName'),
+        phone: formData.get('phone'),
+        birthDate: formData.get('birthDate'),
+        occupation: formData.get('occupation'),
+        monthlyIncome: formData.get('monthlyIncome'),
+        investmentBudget: formData.get('investmentBudget'),
+        preferredLocation: formData.get('preferredLocation'),
+        propertyType: formData.get('propertyType'),
+        financingNeeded: formData.get('financingNeeded') === 'on',
+        newsletterSubscription: formData.get('newsletterSubscription') === 'on',
+        interests: Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value)
     };
-
-    // Save user
-    users.push(newUser);
-    localStorage.setItem('users', JSON.stringify(users));
-
-    showMessage('register-success', '¡Cuenta creada exitosamente! Redirigiendo...');
     
+    // Validate password confirmation
+    const confirmPassword = formData.get('confirmPassword');
+    if (userData.password !== confirmPassword) {
+        showNotification('Las contraseñas no coinciden', 'error');
+        return;
+    }
+    
+    // For Vercel deployment, store locally (in production, use backend API)
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    
+    // Check if user already exists
+    if (users.find(user => user.email === userData.email)) {
+        showNotification('El email ya está registrado', 'error');
+        return;
+    }
+    
+    if (users.find(user => user.username === userData.username)) {
+        showNotification('El nombre de usuario ya existe', 'error');
+        return;
+    }
+    
+    // Add user
+    userData.id = Date.now();
+    userData.createdAt = new Date().toISOString();
+    users.push(userData);
+    localStorage.setItem('users', JSON.stringify(users));
+    
+    showNotification('Registro exitoso. Redirigiendo...', 'success');
+    
+    // Redirect to login page
     // Auto-login and redirect
     setTimeout(() => {
         currentUser = newUser;

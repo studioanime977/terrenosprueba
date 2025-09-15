@@ -396,11 +396,14 @@ async function handleCreateTerrain(event) {
     
     const formData = new FormData(event.target);
     
+    // Generate unique ID
+    const terrainId = Date.now();
+    
     // Create terrain data object
     const terrainData = {
+        id: terrainId,
         name: formData.get('name'),
-        price: parseFloat(formData.get('price')),
-        currency: 'MXN',
+        price: formData.get('price'),
         location: formData.get('location'),
         size: formData.get('size'),
         badge: formData.get('badge'),
@@ -408,54 +411,40 @@ async function handleCreateTerrain(event) {
         description: formData.get('description'),
         features: [...terrainFeatures],
         availability: 'Disponible inmediatamente',
-        main_image: terrainImages.length > 0 ? `../img/terrain_${Date.now()}.jpg` : '../img/default.jpg',
+        mainImage: terrainImages.length > 0 ? `../img/terrain_${Date.now()}.jpg` : '../img/default.jpg',
         thumbnails: terrainImages.map((_, index) => `../img/terrain_${Date.now()}_${index}.jpg`),
-        detail_page: `terreno${Date.now()}.html`,
+        detailPage: `terreno${terrainId}.html`,
         enabled: true // Auto-enable new terrains
     };
     
     try {
-        // Send to backend API
-        const response = await fetch('/api/admin/terrains', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
-            },
-            body: JSON.stringify(terrainData)
-        });
+        // For Vercel deployment, store locally and update JSON
+        terrains.push(terrainData);
         
-        const result = await response.json();
+        // Save to localStorage
+        localStorage.setItem('terrains', JSON.stringify(terrains));
         
-        if (result.success) {
-            // Update local terrains array
-            terrains.push(result.terrain);
-            
-            // Update display
-            displayTerrains();
-            
-            // Reset form
-            resetCreateForm();
-            
-            // Show success message
-            showNotification('Terreno creado y habilitado exitosamente', 'success');
-            
-            // Switch to terrains view
-            showSection('terrains');
-            
-            // Trigger real-time update for index.html
-            await triggerRealTimeUpdate();
-            
-            // Auto-push to Git
-            await autoGitPush('Nuevo terreno creado: ' + terrainData.name);
-            
-        } else {
-            showNotification('Error al crear terreno: ' + result.message, 'error');
-        }
+        // Update the JSON file data
+        updateTerrainsJSON(terrains);
+        
+        // Update display
+        displayTerrains();
+        
+        // Reset form
+        resetCreateForm();
+        
+        // Show success message
+        showNotification('Terreno creado y habilitado exitosamente', 'success');
+        
+        // Switch to terrains view
+        showSection('terrains');
+        
+        // Trigger real-time update for index.html
+        await triggerRealTimeUpdate();
         
     } catch (error) {
         console.error('Error creating terrain:', error);
-        showNotification('Error de conexión al crear terreno', 'error');
+        showNotification('Error al crear terreno', 'error');
     }
 }
 
@@ -626,46 +615,16 @@ async function triggerRealTimeUpdate() {
     try {
         // Broadcast update event to all open windows/tabs
         localStorage.setItem('terrainUpdate', Date.now().toString());
-        
-        // Also send update to backend to sync JSON file
-        const response = await fetch('/api/admin/sync-terrains', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
-            }
-        });
-        
-        if (response.ok) {
-            console.log('Real-time update triggered successfully');
-        }
+        console.log('Real-time update triggered successfully');
     } catch (error) {
         console.error('Error triggering real-time update:', error);
     }
 }
 
-// Auto Git push functionality
+// Auto Git push functionality (disabled for Vercel static deployment)
 async function autoGitPush(commitMessage) {
-    try {
-        const response = await fetch('/api/admin/git-push', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
-            },
-            body: JSON.stringify({ message: commitMessage })
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            showNotification('Cambios subidos a Git automáticamente', 'success');
-        } else {
-            console.log('Git push not configured or failed:', result.message);
-        }
-    } catch (error) {
-        console.error('Error with auto Git push:', error);
-    }
+    // Git push disabled for static Vercel deployment
+    console.log('Git push disabled for static deployment:', commitMessage);
 }
 
 // Close modal when clicking outside
