@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Terrenos Premium</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2><i class="fas fa-map-marked-alt"></i> Terrenos Premium</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#propiedades">Propiedades</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contáctanos</h1>
+            <p>Estamos aquí para ayudarte a encontrar el terreno perfecto para tu inversión</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Envíanos un Mensaje</h2>
+                    <form id="contactForm" onsubmit="submitContactForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nombre *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Apellido *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyInterest">Propiedad de Interés</label>
+                            <select id="propertyInterest" name="property">
+                                <option value="">Seleccione una propiedad (opcional)</option>
+                                <option value="Terreno Residencial Las Flores">Terreno Residencial Las Flores - $85,000 USD</option>
+                                <option value="Terreno Comercial Centro">Terreno Comercial Centro - $150,000 USD</option>
+                                <option value="Terreno Industrial El Progreso">Terreno Industrial El Progreso - $120,000 USD</option>
+                                <option value="Terreno Campestre Vista Hermosa">Terreno Campestre Vista Hermosa - $65,000 USD</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Seleccione un asunto</option>
+                                <option value="Información General">Información General</option>
+                                <option value="Agendar Visita">Agendar Visita</option>
+                                <option value="Consulta de Precios">Consulta de Precios</option>
+                                <option value="Financiamiento">Opciones de Financiamiento</option>
+                                <option value="Asesoría Legal">Asesoría Legal</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto o consulta..." required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Deseo recibir información sobre nuevas propiedades y ofertas especiales</label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Información de Contacto</h2>
+                    
+                    <div class="contact-info-card">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Oficina Principal</h3>
+                                <p>Av. Principal 123, Centro<br>Ciudad, Estado 12345</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Teléfono</h3>
+                                <p>+1 234 567 8900<br>+1 234 567 8901</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <p>info@terrenospremium.com<br>ventas@terrenospremium.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Horarios de Atención</h3>
+                                <p>Lunes - Viernes: 9:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact Buttons -->
+                    <div class="quick-contact">
+                        <h3>Contacto Rápido</h3>
+                        <div class="quick-buttons">
+                            <a href="https://wa.me/1234567890" class="quick-btn whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="tel:+1234567890" class="quick-btn phone">
+                                <i class="fas fa-phone"></i>
+                                <span>Llamar</span>
+                            </a>
+                            <a href="mailto:info@terrenospremium.com" class="quick-btn email">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="social-media">
+                        <h3>Síguenos</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Nuestra Ubicación</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Mapa Interactivo</h3>
+                    <p>Av. Principal 123, Centro, Ciudad</p>
+                    <p>Coordenadas: 19.4326, -99.1332</p>
+                    <button class="btn-directions" onclick="openDirections()">
+                        <i class="fas fa-directions"></i> Cómo Llegar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Qué documentos necesito para comprar un terreno?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Los documentos principales incluyen: identificación oficial, comprobante de ingresos, CURP, RFC, y comprobante de domicilio. Nuestro equipo legal te guiará en todo el proceso.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Ofrecen opciones de financiamiento?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, trabajamos con diferentes instituciones financieras para ofrecerte las mejores opciones de crédito. También manejamos planes de pago directo con facilidades.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Puedo visitar los terrenos antes de comprar?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Por supuesto. Recomendamos agendar una visita con uno de nuestros asesores para conocer personalmente la propiedad y resolver todas tus dudas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>¿Cuánto tiempo toma el proceso de compra?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El proceso típicamente toma entre 30 a 60 días, dependiendo de la documentación y el tipo de financiamiento. Nuestro equipo acelera todos los trámites posibles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Terrenos Premium</h3>
+                    <p>Tu mejor opción para invertir en terrenos</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@terrenospremium.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+    <script src="../chatbot/chatbot.js"></script>
+</body>
+</html>

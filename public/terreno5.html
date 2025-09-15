@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terreno Premium - Disponible Próximamente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/property-detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2><i class="fas fa-map-marked-alt"></i> Terrenos Premium</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#propiedades">Propiedades</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Property Detail Section -->
+    <section class="property-detail">
+        <div class="container">
+            <div class="property-unavailable">
+                <div class="unavailable-content">
+                    <i class="fas fa-clock"></i>
+                    <h1>Terreno Disponible Próximamente</h1>
+                    <p>Este terreno estará disponible muy pronto. Nuestro equipo está preparando toda la información detallada para ofrecerte la mejor experiencia.</p>
+                    
+                    <div class="coming-soon-features">
+                        <div class="feature-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Fotografías profesionales</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Ubicación exacta</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Información detallada</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Precios actualizados</span>
+                        </div>
+                    </div>
+
+                    <div class="notify-section">
+                        <h3>¿Quieres ser notificado cuando esté disponible?</h3>
+                        <form class="notify-form">
+                            <input type="email" placeholder="Tu email" required>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-bell"></i> Notificarme
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="alternative-properties">
+                        <h3>Mientras tanto, te recomendamos:</h3>
+                        <div class="recommendations">
+                            <a href="terreno1.html" class="recommendation-card">
+                                <i class="fas fa-home"></i>
+                                <span>Terreno Residencial Las Flores</span>
+                            </a>
+                            <a href="terreno2.html" class="recommendation-card">
+                                <i class="fas fa-building"></i>
+                                <span>Terreno Comercial Centro</span>
+                            </a>
+                            <a href="terreno3.html" class="recommendation-card">
+                                <i class="fas fa-industry"></i>
+                                <span>Terreno Industrial El Progreso</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="../index.html" class="btn-back">
+                        <i class="fas fa-arrow-left"></i> Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Terrenos Premium</h3>
+                    <p>Tu mejor opción para invertir en terrenos</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@terrenospremium.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle notification form
+        document.querySelector('.notify-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('¡Gracias! Te notificaremos cuando el terreno esté disponible.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

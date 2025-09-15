@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrenos Premium - Venta de Terrenos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2><i class="fas fa-map-marked-alt"></i> Terrenos Premium</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#propiedades">Propiedades</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="public/contacto.html">Contacto</a></li>
+                    <li><a href="public/iniciarcesion.html" class="login-btn"><i class="fas fa-user"></i> Iniciar Sesión</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Encuentra Tu Terreno Ideal</h1>
+            <p>Descubre las mejores oportunidades de inversión en terrenos con ubicaciones privilegiadas y precios competitivos</p>
+            <a href="#propiedades" class="cta-button">Ver Propiedades</a>
+        </div>
+        <div class="hero-image">
+            <img src="img/hero-land.jpg" alt="Terreno Premium">
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="propiedades" class="properties">
+        <div class="container">
+            <h2 class="section-title">Nuestras Propiedades Destacadas</h2>
+            <div class="properties-grid">
+                
+                <!-- Las propiedades se cargarán dinámicamente aquí -->
+            </div>
+            <div class="see-more-container">
+                <button id="see-more-btn" class="cta-button">Ver Más Terrenos</button>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Búsqueda Personalizada</h3>
+                    <p>Te ayudamos a encontrar el terreno perfecto según tus necesidades específicas</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Asesoría Legal</h3>
+                    <p>Acompañamiento completo en todos los trámites legales y documentación</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Financiamiento</h3>
+                    <p>Opciones de financiamiento flexibles adaptadas a tu presupuesto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Terrenos Premium</h3>
+                    <p>Tu mejor opción para invertir en terrenos</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@terrenospremium.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            
+            <!-- Login Form -->
+            <div id="login-form-container">
+                <h2>Iniciar Sesión</h2>
+                <form id="user-login-form">
+                    <div class="form-group">
+                        <label for="login-username">Usuario o Email</label>
+                        <input type="text" id="login-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                </form>
+                <p class="auth-switch">¿No tienes cuenta? <a href="#" onclick="showRegisterForm()">Regístrate aquí</a></p>
+                <p class="auth-switch"><a href="#" onclick="showAdminLogin()">Acceso Administrador</a></p>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form-container" style="display: none;">
+                <h2>Crear Cuenta</h2>
+                <form id="user-register-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-phone">Teléfono</label>
+                        <input type="tel" id="register-phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm">Confirmar Contraseña</label>
+                        <input type="password" id="register-confirm" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Crear Cuenta</button>
+                </form>
+                <p class="auth-switch">¿Ya tienes cuenta? <a href="#" onclick="showLoginForm()">Inicia sesión aquí</a></p>
+            </div>
+
+            <!-- Admin Login Form -->
+            <div id="admin-login-container" style="display: none;">
+                <h2>Acceso Administrador</h2>
+                <form id="admin-login-form">
+                    <div class="form-group">
+                        <label for="admin-username">Usuario Admin</label>
+                        <input type="text" id="admin-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Contraseña Admin</label>
+                        <input type="password" id="admin-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Acceder como Admin</button>
+                </form>
+                <p class="auth-switch"><a href="#" onclick="showLoginForm()">Volver al login normal</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Dashboard (shown when logged in) -->
+    <div id="user-dashboard" class="user-dashboard" style="display: none;">
+        <div class="dashboard-header">
+            <span>Bienvenido, <span id="user-name"></span></span>
+            <button onclick="logout()" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="chatbot/chatbot.js"></script>
+</body>
+</html>

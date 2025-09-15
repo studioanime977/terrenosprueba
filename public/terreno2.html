@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terreno Comercial Centro - Terrenos Premium</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/property-detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2><i class="fas fa-map-marked-alt"></i> Terrenos Premium</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#propiedades">Propiedades</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Property Detail Section -->
+    <section class="property-detail">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index.html">Inicio</a> > 
+                <a href="../index.html#propiedades">Propiedades</a> > 
+                <span>Terreno Comercial Centro</span>
+            </div>
+
+            <div class="property-content">
+                <!-- Image Gallery -->
+                <div class="property-gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="../img/terreno2.jpg" alt="Terreno Comercial Centro">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="../img/terreno2.jpg" alt="Vista principal" onclick="changeMainImage(this.src)" class="active">
+                        <img src="../img/terreno2-2.jpg" alt="Vista lateral" onclick="changeMainImage(this.src)">
+                        <img src="../img/terreno2-3.jpg" alt="Vista aérea" onclick="changeMainImage(this.src)">
+                    </div>
+                </div>
+
+                <!-- Property Information -->
+                <div class="property-info-detail">
+                    <div class="property-header">
+                        <h1>Terreno Comercial Centro</h1>
+                        <div class="property-price">$150,000 USD</div>
+                        <div class="property-badge">Nuevo</div>
+                    </div>
+
+                    <div class="property-basic-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Centro Comercial</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <span>800 m²</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Disponible inmediatamente</span>
+                        </div>
+                    </div>
+
+                    <div class="property-description">
+                        <h3>Descripción</h3>
+                        <p>Ideal para desarrollo comercial con alta afluencia de personas. Este terreno se encuentra en una ubicación estratégica en el corazón del centro comercial de la ciudad, ofreciendo una excelente oportunidad de inversión.</p>
+                        <p>Con un flujo constante de peatones y vehículos, es perfecto para establecimientos comerciales, oficinas, o desarrollo mixto. La zona cuenta con excelente infraestructura y servicios.</p>
+                    </div>
+
+                    <div class="property-features">
+                        <h3>Características</h3>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Ubicación estratégica</li>
+                            <li><i class="fas fa-check"></i> Alto tráfico peatonal</li>
+                            <li><i class="fas fa-check"></i> Transporte público</li>
+                            <li><i class="fas fa-check"></i> Zonificación comercial</li>
+                            <li><i class="fas fa-check"></i> Servicios completos</li>
+                            <li><i class="fas fa-check"></i> Estacionamiento cercano</li>
+                            <li><i class="fas fa-check"></i> Acceso vehicular</li>
+                            <li><i class="fas fa-check"></i> Bancos y servicios financieros</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <button class="btn-primary" onclick="openContactModal()">
+                            <i class="fas fa-phone"></i> Contactar Ahora
+                        </button>
+                        <button class="btn-secondary" onclick="scheduleVisit()">
+                            <i class="fas fa-calendar"></i> Agendar Visita
+                        </button>
+                        <button class="btn-secondary" onclick="requestInfo()">
+                            <i class="fas fa-info-circle"></i> Más Información
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Map -->
+            <div class="location-section">
+                <h3>Ubicación</h3>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Mapa interactivo de la ubicación</p>
+                        <small>Centro Comercial - Coordenadas: 19.4285, -99.1277</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar Properties -->
+            <div class="similar-properties">
+                <h3>Propiedades Similares</h3>
+                <div class="similar-grid">
+                    <div class="similar-card" onclick="window.location.href='terreno3.html'">
+                        <img src="../img/terreno3.jpg" alt="Terreno Industrial">
+                        <div class="similar-info">
+                            <h4>Terreno Industrial El Progreso</h4>
+                            <p>$120,000 USD</p>
+                        </div>
+                    </div>
+                    <div class="similar-card" onclick="window.location.href='terreno1.html'">
+                        <img src="../img/terreno1.jpg" alt="Terreno Residencial">
+                        <div class="similar-info">
+                            <h4>Terreno Residencial Las Flores</h4>
+                            <p>$85,000 USD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contactar sobre: Terreno Comercial Centro</h2>
+            <form onsubmit="submitPropertyContact(event)">
+                <input type="hidden" name="property" value="Terreno Comercial Centro">
+                <div class="form-group">
+                    <label for="contactName">Nombre completo *</label>
+                    <input type="text" id="contactName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email *</label>
+                    <input type="email" id="contactEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Teléfono</label>
+                    <input type="tel" id="contactPhone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Mensaje *</label>
+                    <textarea id="contactMessage" name="message" rows="4" placeholder="Estoy interesado en este terreno comercial. Me gustaría recibir más información..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Terrenos Premium</h3>
+                    <p>Tu mejor opción para invertir en terrenos</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@terrenospremium.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/property-detail.js"></script>
+    <script src="../chatbot/chatbot.js"></script>
+</body>
+</html>

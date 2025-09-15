@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Terreno Residencial Las Flores",
+    "price": "$1,700,000 MXN",
+    "badge": "Destacado",
+    "location": "Zona Norte, Ciudad",
+    "size": "500 m²",
+    "availability": "Disponible inmediatamente",
+    "description": "Excelente terreno en zona residencial con todos los servicios disponibles. Ubicado en una de las mejores zonas de crecimiento de la ciudad, este terreno ofrece una oportunidad única de inversión para construir la casa de sus sueños. La zona cuenta con excelente plusvalía y está rodeada de desarrollos residenciales de alta calidad. Perfecto para familias que buscan tranquilidad sin alejarse de la ciudad.",
+    "features": [
+      "Agua potable",
+      "Electricidad",
+      "Drenaje",
+      "Pavimentación",
+      "Seguridad 24/7",
+      "Cerca de escuelas",
+      "Transporte público",
+      "Centros comerciales cercanos"
+    ],
+    "mainImage": "../img/terreno1.jpg",
+    "thumbnails": [
+      "../img/terreno1.jpg",
+      "../img/terreno1-2.jpg",
+      "../img/terreno1-3.jpg"
+    ],
+    "coordinates": "19.4326, -99.1332",
+    "detailPage": "terreno1.html"
+  },
+  {
+    "id": 2,
+    "name": "Terreno Comercial Centro",
+    "price": "$3,000,000 MXN",
+    "badge": "Nuevo",
+    "location": "Centro Comercial",
+    "size": "800 m²",
+    "availability": "Disponible inmediatamente",
+    "description": "Ideal para desarrollo comercial con alta afluencia de personas. Este terreno se encuentra en una ubicación estratégica en el corazón del centro comercial de la ciudad, ofreciendo una excelente oportunidad de inversión. Con un flujo constante de peatones y vehículos, es perfecto para establecimientos comerciales, oficinas, o desarrollo mixto. La zona cuenta con excelente infraestructura y servicios.",
+    "features": [
+      "Ubicación estratégica",
+      "Alto tráfico peatonal",
+      "Transporte público",
+      "Zonificación comercial",
+      "Servicios completos",
+      "Estacionamiento cercano",
+      "Acceso vehicular",
+      "Bancos y servicios financieros"
+    ],
+    "mainImage": "../img/terreno2.jpg",
+    "thumbnails": [
+      "../img/terreno2.jpg",
+      "../img/terreno2-2.jpg",
+      "../img/terreno2-3.jpg"
+    ],
+    "coordinates": "19.4285, -99.1277",
+    "detailPage": "terreno2.html"
+  },
+  {
+    "id": 3,
+    "name": "Terreno Industrial El Progreso",
+    "price": "$2,400,000 MXN",
+    "badge": "",
+    "location": "Zona Industrial",
+    "size": "1,200 m²",
+    "availability": "Disponible inmediatamente",
+    "description": "Perfecto para desarrollo industrial con acceso a carreteras principales. Este amplio terreno está ubicado en la zona industrial más importante de la región, con excelente conectividad y servicios especializados. Ideal para empresas manufactureras, bodegas, centros de distribución o cualquier actividad industrial. La ubicación estratégica permite fácil acceso a puertos, aeropuertos y principales vías de comunicación.",
+    "features": [
+      "Acceso a carreteras principales",
+      "Servicios industriales",
+      "Zonificación industrial",
+      "Amplio espacio",
+      "Energía trifásica",
+      "Agua industrial",
+      "Sistema de drenaje industrial",
+      "Seguridad perimetral"
+    ],
+    "mainImage": "../img/terreno3.jpg",
+    "thumbnails": [
+      "../img/terreno3.jpg",
+      "../img/terreno3-2.jpg",
+      "../img/terreno3-3.jpg"
+    ],
+    "coordinates": "19.3910, -99.2837",
+    "detailPage": "terreno3.html"
+  },
+  {
+    "id": 4,
+    "name": "Terreno Campestre Vista Hermosa",
+    "price": "$1,300,000 MXN",
+    "badge": "Oferta",
+    "location": "Zona Rural",
+    "size": "2,000 m²",
+    "availability": "Disponible inmediatamente",
+    "description": "Hermoso terreno campestre con vista panorámica y ambiente natural. Este extenso terreno ofrece la oportunidad perfecta para construir una casa de campo o desarrollar un proyecto eco-turístico en un entorno natural privilegiado. Rodeado de naturaleza y con vistas espectaculares, es ideal para quienes buscan tranquilidad y contacto con el medio ambiente. Perfecto para escapar del bullicio de la ciudad sin alejarse demasiado de los servicios urbanos.",
+    "features": [
+      "Vista panorámica",
+      "Ambiente natural",
+      "Aire puro",
+      "Tranquilidad",
+      "Ideal para casa de campo",
+      "Acceso por camino rural",
+      "Pozo de agua",
+      "Electricidad cercana"
+    ],
+    "mainImage": "../img/terreno4.jpg",
+    "thumbnails": [
+      "../img/terreno4.jpg",
+      "../img/terreno4-2.jpg",
+      "../img/terreno4-3.jpg"
+    ],
+    "coordinates": "19.5126, -99.0532",
+    "detailPage": "terreno4.html"
+  }
+]

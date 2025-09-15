@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Terrenos Premium</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2><i class="fas fa-map-marked-alt"></i> Terrenos Premium</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html#propiedades">Propiedades</a></li>
+                    <li><a href="../index.html#servicios">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Register Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-box">
+                <div class="auth-header">
+                    <h2><i class="fas fa-user-plus"></i> Crear Cuenta</h2>
+                    <p>Únete a Terrenos Premium y descubre oportunidades exclusivas</p>
+                </div>
+
+                <form id="register-form" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">Nombre</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="first-name" name="first_name" required placeholder="Tu nombre">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Apellido</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="last-name" name="last_name" required placeholder="Tu apellido">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="+52 123 456 7890">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reg-password">Contraseña</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="reg-password" name="password" required placeholder="Mínimo 6 caracteres">
+                                <button type="button" class="toggle-password" onclick="togglePassword('reg-password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmar Contraseña</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirm-password" name="confirm_password" required placeholder="Repite tu contraseña">
+                                <button type="button" class="toggle-password" onclick="togglePassword('confirm-password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">¿Qué tipo de terreno te interesa?</label>
+                        <div class="input-group">
+                            <i class="fas fa-map"></i>
+                            <select id="interest" name="interest">
+                                <option value="">Selecciona una opción</option>
+                                <option value="residencial">Residencial</option>
+                                <option value="comercial">Comercial</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="campestre">Campestre</option>
+                                <option value="inversion">Inversión</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="terms" required>
+                            <span class="checkmark"></span>
+                            Acepto los <a href="#" class="terms-link">términos y condiciones</a>
+                        </label>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="newsletter">
+                            <span class="checkmark"></span>
+                            Quiero recibir noticias y ofertas especiales
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-full">
+                        <i class="fas fa-user-plus"></i> Crear Cuenta
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>¿Ya tienes cuenta? <a href="iniciarcesion.html" class="login-link">Inicia sesión aquí</a></p>
+                </div>
+
+                <div id="register-error" class="error-message" style="display: none;"></div>
+                <div id="register-success" class="success-message" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Terrenos Premium</h3>
+                    <p>Tu mejor opción para invertir en terrenos</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@terrenospremium.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/auth-pages.js"></script>
+</body>
+</html>
