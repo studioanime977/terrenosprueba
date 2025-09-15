@@ -89,17 +89,28 @@ function showSection(sectionName) {
     }
 }
 
-// Load terrains from JSON
+// Load terrains from localStorage first, then JSON
 async function loadTerrains() {
     try {
+        // First try localStorage (where admin changes are stored)
+        const localTerrains = localStorage.getItem('terrains');
+        if (localTerrains) {
+            terrains = JSON.parse(localTerrains);
+            displayTerrains();
+            console.log('Admin: Terrains loaded from localStorage:', terrains.length);
+            return;
+        }
+        
+        // Fallback to JSON file
         const response = await fetch('public/terrains.json');
         terrains = await response.json();
-        displayTerrains();
         
-        // Also load users if on users section
-        if (document.getElementById('users-section').style.display !== 'none') {
-            loadUsers();
-        }
+        // Save to localStorage for future use
+        localStorage.setItem('terrains', JSON.stringify(terrains));
+        
+        displayTerrains();
+        console.log('Admin: Terrains loaded from JSON:', terrains.length);
+        
     } catch (error) {
         console.error('Error loading terrains:', error);
         showNotification('Error al cargar los terrenos', 'error');
@@ -615,6 +626,14 @@ async function triggerRealTimeUpdate() {
     try {
         // Broadcast update event to all open windows/tabs
         localStorage.setItem('terrainUpdate', Date.now().toString());
+        
+        // Also trigger storage event manually for same-window updates
+        window.dispatchEvent(new StorageEvent('storage', {
+            key: 'terrainUpdate',
+            newValue: Date.now().toString(),
+            storageArea: localStorage
+        }));
+        
         console.log('Real-time update triggered successfully');
     } catch (error) {
         console.error('Error triggering real-time update:', error);

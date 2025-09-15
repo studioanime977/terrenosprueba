@@ -328,7 +328,17 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load terrains from API
 async function loadTerrains() {
     try {
-        // For Vercel deployment, use JSON file directly
+        // First try to load from localStorage (admin changes)
+        const localTerrains = localStorage.getItem('terrains');
+        if (localTerrains) {
+            const terrainsData = JSON.parse(localTerrains);
+            properties = terrainsData.filter(terrain => terrain.enabled !== false);
+            displayProperties();
+            console.log('Terrains loaded from localStorage:', properties.length);
+            return;
+        }
+        
+        // Fallback to JSON file
         loadTerrainsFromJSON();
     } catch (error) {
         console.error('Error loading terrains:', error);
@@ -343,6 +353,7 @@ function loadTerrainsFromJSON() {
         .then(data => {
             properties = data.filter(terrain => terrain.enabled !== false);
             displayProperties();
+            console.log('Terrains loaded from JSON:', properties.length);
         })
         .catch(error => console.error('Error fetching properties from JSON:', error));
 }
