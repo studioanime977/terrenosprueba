@@ -1,0 +1,13 @@
+{
+  "name": "terrenos-premium",
+  "version": "1.0.0",
+  "description": "Real Estate Terrains Website",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "start": "echo 'Static site - no start needed'"
+  },
+  "keywords": ["real-estate", "terrains", "properties"],
+  "author": "Terrenos Premium",
+  "license": "MIT"
+}

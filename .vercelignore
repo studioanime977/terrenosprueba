@@ -1,0 +1,10 @@
+app.py
+requirements.txt
+.env
+.env.example
+database/
+config/
+chatbot/
+*.pyc
+__pycache__/
+.git/
